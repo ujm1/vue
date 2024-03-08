@@ -1,11 +1,13 @@
-import HomeView from "@/views/HomeView.vue"
-import AboutView from "@/views/AboutView.vue"
-import { createRouter, createWebHistory } from "vue-router";
-import {useRouter} from 'vue-router';
-import NestedView from "@/views/nested/NestedView.vue";
-import NestedOneView from "@/views/nested/NestedOneView.vue";
-import NestedTwoView from "@/views/nested/NestedTwoView.vue";
-import NestedHomeView from "@/views/nested/NestedHomeView.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
+import MemberListView from '@/views/members/MemberListView.vue'
+import NestedView from '@/views/nested/NestedView.vue'
+import NestedOneView from '@/views/nested/NestedOneView.vue'
+import NestedTwoView from '@/views/nested/NestedTwoView.vue'
+import NestedHomeView from '@/views/nested/NestedHomeView.vue'
+import MemberDetailView from '@/views/members/MemberDetailView.vue'
+
 
 const routes= [
     {
@@ -45,10 +47,23 @@ const routes= [
     
     },
 
+    {
+        path:"/members",
+        name:"MemberList",
+        component: MemberListView,
+    },
+
+    {
+        path:"/members/detail/:id",
+        name:'MemberDetail',
+        component: MemberDetailView,
+        props: true
+    }
+
 ];
 
 const router=createRouter({ //라우터 객체를 만듬
-    history: createWebHistory("/"),
+    history: createWebHistory('/'),
     routes: routes, //위의 만든 객체 routes를 루트로 해서 라우터를 생성
 })
 

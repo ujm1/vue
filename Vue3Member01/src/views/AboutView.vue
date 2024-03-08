@@ -2,6 +2,7 @@
     <div>
         <h2>About View</h2>
         <p>{{ $route.path }}</p>
+        
         <button class="btn btn-primary" @click="$router.push('/')">
             Home으로 이동
         </button>
@@ -13,6 +14,7 @@
     import {useRouter} from 'vue-router';
 
     const route=useRouter();
+    console.log('route.path:', route.path)
 
 </script>
 

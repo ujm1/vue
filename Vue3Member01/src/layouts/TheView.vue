@@ -1,7 +1,9 @@
 <template>
-    <div class="container py-4">
-        <RouterView></RouterView>
-    </div>
+    <main>
+     <div class="container py-4">
+           <RouterView></RouterView>
+        </div>
+    </main>
 </template>
 
 <script setup>
